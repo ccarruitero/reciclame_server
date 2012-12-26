@@ -12,4 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require ember
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
+//= require reciclame
+Reciclame = Ember.Application.create();
 //= require_tree .

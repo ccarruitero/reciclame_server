@@ -1,0 +1,2 @@
+module ReciclePlacesHelper
+end

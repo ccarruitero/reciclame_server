@@ -1,4 +1,6 @@
 Reciclame::Application.routes.draw do
+  resources :recicle_places
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

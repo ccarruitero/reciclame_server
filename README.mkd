@@ -1,0 +1,2 @@
+# reciclame
+little app to know where can I recycle things.

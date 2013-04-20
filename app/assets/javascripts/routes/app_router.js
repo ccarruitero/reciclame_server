@@ -1,17 +1,12 @@
-Reciclame.Router = Ember.Router.extend({
-  location: 'hash',
-
-  root: Ember.Route.extend({
-    index: Ember.Route.extend({
-      route: '/'
-
-      // You'll likely want to connect a view here.
-      // connectOutlets: function(router) {
-      //   router.get('applicationController').connectOutlet(App.MainView);
-      // }
-
-      // Layout your routes here...
-    })
-  })
+Reciclame.Router.map(function(){
+  this.resource('about');
+  this.resource('places', function(){
+    this.resource('place', { path: ':place_id' });
+  });
 });
 
+Reciclame.PlacesRoute = Ember.Route.extend({
+  model: function(){
+    return Reciclame.Place.find();
+  }
+});

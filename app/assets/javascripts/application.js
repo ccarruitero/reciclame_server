@@ -17,5 +17,7 @@
 //= require ember-data
 //= require_self
 //= require reciclame
-Reciclame = Ember.Application.create();
+Reciclame = Ember.Application.create({
+  rootElement: '#content-area'
+});
 //= require_tree .

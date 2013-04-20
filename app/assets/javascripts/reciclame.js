@@ -7,4 +7,3 @@
 //= require_tree ./routes
 //= require_self
 
-Reciclame.initialize();

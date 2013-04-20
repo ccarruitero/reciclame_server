@@ -1,6 +1,6 @@
-class CreateReciclePlaces < ActiveRecord::Migration
+class CreatePlaces < ActiveRecord::Migration
   def change
-    create_table :recicle_places do |t|
+    create_table :places do |t|
       t.text :name
       t.text :address
       t.integer :lat

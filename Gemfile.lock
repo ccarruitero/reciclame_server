@@ -63,14 +63,15 @@ GEM
     jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jshint_on_rails (1.0.2)
     json (1.7.7)
     mail (2.5.3)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     metaclass (0.0.1)
-    mime-types (1.22)
-    minitest (4.7.2)
+    mime-types (1.23)
+    minitest (4.7.3)
     mocha (0.13.3)
       metaclass (~> 0.0.1)
     multi_json (1.7.2)
@@ -131,6 +132,7 @@ DEPENDENCIES
   ember-rails!
   handlebars-source (= 1.0.0.rc3)
   jquery-rails
+  jshint_on_rails
   minitest
   mocha
   pg

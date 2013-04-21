@@ -18,6 +18,7 @@ end
 gem 'jquery-rails'
 gem 'handlebars-source', '1.0.0.rc3'
 gem 'ember-rails', git: 'https://github.com/emberjs/ember-rails.git'
+gem 'jshint_on_rails'
 
 gem 'minitest'
 gem 'turn'

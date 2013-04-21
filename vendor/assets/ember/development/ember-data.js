@@ -1,4 +1,4 @@
-// Last commit: 75b805c (2013-04-19 14:45:33 -0700)
+// Last commit: e324f0e (2013-04-21 12:54:42 -0400)
 
 
 (function() {
@@ -6270,22 +6270,6 @@ DS.Serializer = Ember.Object.extend({
     }
 
     record.materializeBelongsTo(name, tuple);
-  },
-
-  _extractEmbeddedRelationship: function(type, hash, name, relationshipType) {
-    var key = this['_keyFor' + relationshipType](type, name);
-
-    if (this.embeddedType(type, name)) {
-      return this['extractEmbedded' + relationshipType](type, hash, key);
-    }
-  },
-
-  _extractEmbeddedBelongsTo: function(type, hash, name) {
-    return this._extractEmbeddedRelationship(type, hash, name, 'BelongsTo');
-  },
-
-  _extractEmbeddedHasMany: function(type, hash, name) {
-    return this._extractEmbeddedRelationship(type, hash, name, 'HasMany');
   },
 
   _convertPrematerializedHasMany: function(type, prematerializedHasMany) {

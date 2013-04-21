@@ -1,5 +1,5 @@
-// Version: v1.0.0-rc.2-180-g07c6a87
-// Last commit: 07c6a87 (2013-04-19 22:14:37 -0700)
+// Version: v1.0.0-rc.3-1-g451f24c
+// Last commit: 451f24c (2013-04-21 12:40:06 -0400)
 
 
 (function() {
@@ -151,8 +151,8 @@ Ember.deprecateFunc = function(message, func) {
 
 })();
 
-// Version: v1.0.0-rc.2-180-g07c6a87
-// Last commit: 07c6a87 (2013-04-19 22:14:37 -0700)
+// Version: v1.0.0-rc.3-1-g451f24c
+// Last commit: 451f24c (2013-04-21 12:40:06 -0400)
 
 
 (function() {
@@ -212,7 +212,7 @@ var define, requireModule;
 
   @class Ember
   @static
-  @version 1.0.0-rc.2
+  @version 1.0.0-rc.3
 */
 
 if ('undefined' === typeof Ember) {
@@ -239,10 +239,10 @@ Ember.toString = function() { return "Ember"; };
 /**
   @property VERSION
   @type String
-  @default '1.0.0-rc.2'
+  @default '1.0.0-rc.3'
   @final
 */
-Ember.VERSION = '1.0.0-rc.2';
+Ember.VERSION = '1.0.0-rc.3';
 
 /**
   Standard environmental variables. You can define these in a global `ENV`
@@ -24747,8 +24747,8 @@ Ember.onLoad('Ember.Handlebars', function(Handlebars) {
     routers's configured `Location` scheme, which defaults
     to Ember.HashLocation.
 
-    ## Handling 'current'
-    `{{linkTo}}` will apply a CSS class name of 'current'
+    ## Handling current route
+    `{{linkTo}}` will apply a CSS class name of 'active'
     when the application's current route matches
     the supplied routeName. For example, if the application's
     current route is 'photoGallery.recent' the following
@@ -24768,7 +24768,7 @@ Ember.onLoad('Ember.Handlebars', function(Handlebars) {
     </a>
     ```
 
-    The CSS class name use for active classes can be customized
+    The CSS class name used for active classes can be customized
     for a single use of `{{linkTo}}` by passing an `activeClass`
     option:
 
@@ -24812,8 +24812,8 @@ Ember.onLoad('Ember.Handlebars', function(Handlebars) {
 
     ## Supplying multiple models
     For deep-linking to route paths that contain multiple
-    dynamic segments multiple model arguments can be used.
-    As the router transitions through the route path each
+    dynamic segments, multiple model arguments can be used.
+    As the router transitions through the route path, each
     supplied model argument will become the context for the
     route with the dynamic segments:
 
@@ -25526,6 +25526,28 @@ if (Ember.ENV.EXPERIMENTAL_CONTROL_HELPER) {
 var get = Ember.get, set = Ember.set;
 
 Ember.ControllerMixin.reopen({
+  /**
+    Transition the application into another route. The route may
+    be either a single route or route path:
+
+    ```javascript
+      aController.transitionToRoute('blogPosts');
+      aController.transitionToRoute('blogPosts.recentEntries');
+    ```
+
+    Optionally supply a model for the route in question. The model
+    will be serialized into the URL using the `serialize` hook of
+    the route:
+    
+    ```javascript
+      aController.transitionToRoute('blogPost', aPost);
+    ```
+
+    @param {String} name the name of the route
+    @param {...Object} models the
+    @for Ember.ControllerMixin
+    @method transitionToRoute
+  */
   transitionToRoute: function() {
     // target may be either another controller or a router
     var target = get(this, 'target'),
@@ -25533,6 +25555,11 @@ Ember.ControllerMixin.reopen({
     return method.apply(target, arguments);
   },
 
+  /**
+    @deprecated
+    @for Ember.ControllerMixin
+    @method transitionTo
+  */
   transitionTo: function() {
     Ember.deprecate("transitionTo is deprecated. Please use transitionToRoute.");
     return this.transitionToRoute.apply(this, arguments);
@@ -25545,6 +25572,11 @@ Ember.ControllerMixin.reopen({
     return method.apply(target, arguments);
   },
 
+  /**
+    @deprecated
+    @for Ember.ControllerMixin
+    @method replaceWith
+  */
   replaceWith: function() {
     Ember.deprecate("replaceWith is deprecated. Please use replaceRoute.");
     return this.replaceRoute.apply(this, arguments);
@@ -26784,16 +26816,19 @@ var Application = Ember.Application = Ember.Namespace.extend(Ember.DeferredMixin
   },
 
   reset: function() {
-    Ember.run(get(this,'__container__'), 'destroy');
+    Ember.assert('App#reset no longer rneeds to be wrapped in a run-loop', !Ember.run.currentRunLoop);
+    Ember.run(this, function(){
+      Ember.run(get(this,'__container__'), 'destroy');
 
-    this.buildContainer();
+      this.buildContainer();
 
-    this._readinessDeferrals = 1;
-    this.$(this.rootElement).removeClass('ember-application');
+      this._readinessDeferrals = 1;
+      this.$(this.rootElement).removeClass('ember-application');
 
-    Ember.run.schedule('actions', this, function(){
-      this._initialize();
-      this.startRouting();
+      Ember.run.schedule('actions', this, function(){
+        this._initialize();
+        this.startRouting();
+      });
     });
   },
 
@@ -28502,8 +28537,8 @@ Ember.Application.reopen({
 
 
 })();
-// Version: v1.0.0-rc.2-180-g07c6a87
-// Last commit: 07c6a87 (2013-04-19 22:14:37 -0700)
+// Version: v1.0.0-rc.3-1-g451f24c
+// Last commit: 451f24c (2013-04-21 12:40:06 -0400)
 
 
 (function() {

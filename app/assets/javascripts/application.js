@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require mapbox
+//= require map
 //= require handlebars
 //= require ember
 //= require ember-data

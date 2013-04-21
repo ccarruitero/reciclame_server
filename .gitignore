@@ -15,3 +15,4 @@
 /tmp
 *.swp
 db/seeds.rb
+config/jshint.yml

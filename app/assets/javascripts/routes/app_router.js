@@ -10,3 +10,9 @@ Reciclame.PlacesRoute = Ember.Route.extend({
     return Reciclame.Place.find();
   }
 });
+
+Reciclame.IndexRoute = Ember.Route.extend({
+  redirect: function(){
+    this.transitionTo('places');
+  }
+});

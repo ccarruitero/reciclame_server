@@ -1,10 +1,16 @@
 <header>
   <h1>{{#linkTo 'index'}}Reciclame{{/linkTo}}</h1>
+  <nav>
+    <li>{{#linkTo 'places'}}places{{/linkTo}}</li>
+    <li>{{#linkTo 'about'}}about{{/linkTo}}</li>
+  </nav>
 </header>
-
-<nav>
-  <li>{{#linkTo 'places'}}places{{/linkTo}}</li>
-  <li>{{#linkTo 'about'}}about{{/linkTo}}</li>
-</nav>
-{{outlet}}
-<div id="map"></div>
+<div class="clear"></div>
+<aside>
+  {{outlet}}
+</aside>
+<div id="map">
+</div>
+  {{#each place in places}}
+    {{addmarker place.name}}
+  {{/each}}

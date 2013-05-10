@@ -5,6 +5,10 @@ Reciclame.Router.map(function(){
   });
 });
 
+Reciclame.Router.reopen({
+  location: 'history'
+});
+
 Reciclame.PlacesRoute = Ember.Route.extend({
   model: function(){
     return Reciclame.Place.find();

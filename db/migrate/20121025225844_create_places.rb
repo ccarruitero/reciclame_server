@@ -5,6 +5,7 @@ class CreatePlaces < ActiveRecord::Migration
       t.text :address
       t.integer :lat
       t.integer :lng
+      t.integer :category_id
 
       t.timestamps
     end

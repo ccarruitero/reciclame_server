@@ -20,7 +20,7 @@ gem 'handlebars-source', '1.0.0.rc3'
 gem 'ember-rails', git: 'https://github.com/emberjs/ember-rails.git'
 gem 'jshint_on_rails'
 
-gem 'minitest'
+gem 'minitest-rails'
 gem 'turn'
 gem 'mocha', require: false
 #gem "active_model_serializers"

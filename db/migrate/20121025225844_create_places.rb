@@ -3,8 +3,8 @@ class CreatePlaces < ActiveRecord::Migration
     create_table :places do |t|
       t.text :name
       t.text :address
-      t.integer :lat
-      t.integer :lng
+      t.decimal :lat
+      t.decimal :lng
       t.integer :category_id
 
       t.timestamps

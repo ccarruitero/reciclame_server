@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(:version => 20130510040833) do
   create_table "places", :force => true do |t|
     t.text     "name"
     t.text     "address"
-    t.integer  "lat"
-    t.integer  "lng"
+    t.decimal  "lat"
+    t.decimal  "lng"
     t.integer  "category_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false

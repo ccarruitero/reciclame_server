@@ -1,10 +1,10 @@
-/*var App = {
-
+Reciclame.MapController = Ember.ObjectController.extend({
+  lat: null,
+  lng: null,
   init: function(){
-    debugger;
-    var map = L.mapbox.map('map','ccarruitero.map-d86ft9dj');
-
-    if("geolocation" in navigator) {
+    var map =  L.mapbox.map('map','ccarruitero.map-d86ft9dj');
+    map.setView([37.9, -77], 5);
+    /*if("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(function(position){
         var lat = position.coords.latitude,
             lng = position.coords.longitude;
@@ -13,12 +13,7 @@
       });
     } else {
       map.setView([37.9, -77], 5);
-    }
-
-    var places = map.addLayer();
+    }*/
   }
-}
-
-window.onload = function(){
-  App.init();
-};*/
+  
+});

@@ -7,10 +7,6 @@
 </header>
 <div class="clear"></div>
 <aside>
-  {{outlet}}
+  {{outlet sidebar}}
 </aside>
-<div id="map">
-</div>
-  {{#each place in places}}
-    {{addmarker place.name}}
-  {{/each}}
+  {{outlet map}}

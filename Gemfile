@@ -4,6 +4,9 @@ gem 'rails'
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'qunit-rails'
+  gem 'konacha'
+  gem 'selenium-webdriver'
 end
 
 group :production do
@@ -22,5 +25,3 @@ gem 'jshint_on_rails'
 
 gem 'minitest-rails'
 gem 'turn'
-gem 'mocha', require: false
-#gem "active_model_serializers"

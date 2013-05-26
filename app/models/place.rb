@@ -1,5 +1,5 @@
 class Place < ActiveRecord::Base
-  attr_accessible :address, :lat, :lng, :name
+  attr_accessible :address, :lat, :lng, :name, :district
   belongs_to :category
 
   validates :name, :address, :lat, :lng, presence: true

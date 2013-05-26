@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20130510040833) do
   create_table "places", :force => true do |t|
     t.text     "name"
     t.text     "address"
+    t.text     "district"
     t.decimal  "lat"
     t.decimal  "lng"
     t.integer  "category_id"

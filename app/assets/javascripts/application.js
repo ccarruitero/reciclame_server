@@ -11,7 +11,6 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
 //= require mapbox
 //= require map
 //= require handlebars
@@ -19,7 +18,8 @@
 //= require ember-data
 //= require_self
 //= require reciclame
-Reciclame = Ember.Application.create({
+window.Reciclame = Ember.Application.create({
   rootElement: '#content-area'
 });
+
 //= require_tree .

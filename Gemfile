@@ -18,8 +18,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
-gem 'handlebars-source', '1.0.0.rc3'
+# gem 'jquery-rails'
+gem 'handlebars-source', '1.0.0.rc4'
 gem 'ember-rails', git: 'https://github.com/emberjs/ember-rails.git'
 gem 'jshint_on_rails'
 

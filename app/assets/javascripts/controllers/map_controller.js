@@ -18,19 +18,16 @@ Reciclame.MapController = Ember.ObjectController.extend({
         map.setView([37.9, -77], 13);
       }
 
-      $.getJSON('http://localhost:3000/places.json', function(data){
-        var places = data.places;
-
-        places.map(function(place){
-          that.addMarker(place);
-        });
+      var places = that.get('controllers.places.content');
+      places.map(function(place){
+        that.addMarker(place);
       });
     }, 2000);
   },
 
   addMarker: function(place){
-    var lat = place.lat;
-    var lng = place.lng;
+    var lat = place.get('lat');
+    var lng = place.get('lng');
 
     L.mapbox.markerLayer({
         type: 'Feature',
@@ -42,8 +39,8 @@ Reciclame.MapController = Ember.ObjectController.extend({
             'marker-color': '#000',
             'marker-symbol': 'waste-basket',
             'marker-size': 'medium',
-            title: place.name,
-            address: place.address
+            title: place.get('name'),
+            address: place.get('address')
         }
     }).addTo(map);
   }

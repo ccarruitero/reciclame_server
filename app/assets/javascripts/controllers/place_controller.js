@@ -2,10 +2,13 @@ Reciclame.PlaceController = Ember.ObjectController.extend({
   isEditing: false,
 
   init: function(){
-    //var lat = this.model.get('lat');
-    //var lng = this.model.get('lng');
-    //map.setView([lat, lng],17);
-    console.log(this.get('model.lat'));
+
+    var that = this;
+    setTimeout(function(){
+      var lat = that.get('model.lat');
+      var lng = that.get('content.lng');
+      map.setView([lat, lng],17);
+    },2000);
   },
 
   doneEditing: function(){

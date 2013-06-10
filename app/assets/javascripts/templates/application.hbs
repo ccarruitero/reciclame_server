@@ -4,6 +4,14 @@
     <li>{{#linkTo 'places'}}places{{/linkTo}}</li>
     <li>{{#linkTo 'about'}}about{{/linkTo}}</li>
   </nav>
+  <div class="mob-menu">
+    <div id="resp-button"></div>
+    {{view Ember.Select
+      contentBinding = "Reciclame.Place.find()"
+      optionValuePath = "content.id"
+      optionLabelPath = "content.name"
+    }}
+  </div>
 </header>
 <div class="clear"></div>
 <aside>

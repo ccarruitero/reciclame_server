@@ -1,0 +1,34 @@
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  nav {
+    display: none;
+  }
+
+  .places {
+    display: none;
+  }
+
+  aside {
+    height: auto;
+  }
+
+  .mob-menu {
+    display: block;
+    float: right;
+    margin: 3px;
+  }
+
+ #resp-button {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 5px 0px 0px -3px;
+    background: url('icn-menu.png') no-repeat;
+    cursor: pointer;
+  }
+
+}
+
+/*
+@media only screen and () and () {
+
+}*/

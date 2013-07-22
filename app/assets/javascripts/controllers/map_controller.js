@@ -9,8 +9,10 @@ Reciclame.MapController = Ember.ObjectController.extend({
       window.map =  L.mapbox.map('map','ccarruitero.map-d86ft9dj');
       if("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(function(position){
+          console.log('try get position');
           var lat = position.coords.latitude,
               lng = position.coords.longitude;
+          console.log('position is ' + lat, lng);
           map.setView([lat, lng], 13);
           var marker = L.marker([lat, lng]).addTo(map);
         });

@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require mapbox
-//= require map
 //= require handlebars
 //= require ember
 //= require ember-data

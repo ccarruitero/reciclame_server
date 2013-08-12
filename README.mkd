@@ -1,2 +1,4 @@
 # reciclame
-little app to know where can I recycle things.
+Little app to know where can I recycle things.
+
+You can see this running at heroku [here](http://reciclame.herokuapp.com)

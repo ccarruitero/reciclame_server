@@ -1,10 +1,13 @@
-<div class="place">
+<div class="content">
   {{outlet}}
 </div>
 
 <div class="places">
   <h3>{{#linkTo 'places'}}Places{{/linkTo}}</h3>
   {{#each model}}
-    <li>{{#linkTo 'place' this}}{{name}}{{/linkTo}} in {{address}}</li>
+      <li class="place">
+        {{#linkTo 'place' this}}{{name}}{{/linkTo}}
+        <span> in {{address}} </span>
+      </li>
   {{/each}}
 </div>

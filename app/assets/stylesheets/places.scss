@@ -1,7 +1,28 @@
 .places {
+  li {
+    list-style: none
+  }
 }
 
 .place {
-//  position: absolute;
-//  float: left;
+  height: 50px;
+
+  a {
+    font-size: 14px;
+    padding: 5px;
+    display: block;
+
+    &:hover {
+      background: rgba(255,250,25,0.3);
+      font-weight: bold;
+    }
+  }
+
+  span {
+    display: block;
+    font-size: 12px;
+    width: 95%;
+    float: right;
+    clear: both;
+  }
 }

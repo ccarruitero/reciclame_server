@@ -24,3 +24,4 @@ gem 'jshint_on_rails'
 
 gem 'minitest-rails'
 gem 'turn'
+gem 'puma'

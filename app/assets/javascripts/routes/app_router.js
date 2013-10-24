@@ -11,7 +11,7 @@ Reciclame.Router.reopen({
 
 Reciclame.PlacesRoute = Ember.Route.extend({
   model: function(){
-    return Reciclame.Place.find();
+    return this.store.find('place');
   },
   renderTemplate: function(){
     this.render();

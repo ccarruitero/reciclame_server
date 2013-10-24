@@ -1,6 +1,14 @@
+.content {
+  margin: 10px 0;
+  padding: 5px;
+}
+
 .places {
+  overflow-y: scroll;
+  max-height: 420px;
+
   li {
-    list-style: none
+    list-style: none;
   }
 }
 

@@ -1,13 +1,13 @@
 <header>
-  <h1>{{#linkTo 'index'}}Reciclame{{/linkTo}}</h1>
+  <h1>{{#link-to 'index'}}Reciclame{{/link-to}}</h1>
   <nav>
-    <li>{{#linkTo 'places'}}places{{/linkTo}}</li>
-    <li>{{#linkTo 'about'}}about{{/linkTo}}</li>
+    <li>{{#link-to 'places'}}places{{/link-to}}</li>
+    <li>{{#link-to 'about'}}about{{/link-to}}</li>
   </nav>
   <div class="mob-menu">
     <div id="resp-menu">
-      <li>{{#linkTo 'places'}}places{{/linkTo}}</li>
-      <li>{{#linkTo 'about'}}about{{/linkTo}}</li>
+      <li>{{#link-to 'places'}}places{{/link-to}}</li>
+      <li>{{#link-to 'about'}}about{{/link-to}}</li>
     </div>
   </div>
 </header>
@@ -15,7 +15,4 @@
 <aside>
   {{outlet sidebar}}
 </aside>
-  {{view Reciclame.MapView
-    target = "Reciclame.MapController"
-    action = "startMap"
-  }}
+  {{view Reciclame.MapView}}

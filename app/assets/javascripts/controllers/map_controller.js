@@ -7,17 +7,13 @@ Reciclame.MapController = Ember.ObjectController.extend({
 
     setTimeout(function(){
       window.map =  L.mapbox.map('map','ccarruitero.map-d86ft9dj');
-      if("geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition(function(position){
-          console.log('try get position');
-          var lat = position.coords.latitude,
-              lng = position.coords.longitude;
-          console.log('position is ' + lat, lng);
-          map.setView([lat, lng], 13);
-          var marker = L.marker([lat, lng]).addTo(map);
-        });
+      if('geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition(that.geoSuccess,
+                                                 that.geoError,
+                                                 that.geoOptions);
+
       } else {
-        map.setView([37.9, -77], 13);
+        map.setView([-12.132292, -77.021588], 13);
       }
 
       var places = that.get('controllers.places.content');
@@ -45,6 +41,25 @@ Reciclame.MapController = Ember.ObjectController.extend({
             address: place.get('address')
         }
     }).addTo(map);
-  }
+  },
   
+  geoSuccess: function(position){
+    console.log('try get position');
+    var lat = position.coords.latitude,
+        lng = position.coords.longitude;
+    console.log('position is ' + lat, lng);
+    map.setView([lat, lng], 13);
+    var marker = L.marker([lat, lng]).addTo(map);
+  },
+
+  geoError: function(error){
+    console.log('something wrong happens!');
+    console.log('Error ' + error.code + ' : ' + error.message);
+    //ToDo: show message with error
+    map.setView([-12.132292, -77.021588], 13);
+  },
+
+  geoOptions: {
+    timeout: 17000
+  }
 });

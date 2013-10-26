@@ -40,7 +40,9 @@ Reciclame.MapController = Ember.ObjectController.extend({
             title: place.get('name'),
             address: place.get('address')
         }
-    }).addTo(map);
+    }).addTo(map).on('click', function(e) {
+        map.panTo(e.layer.getLatLng());
+    });
   },
   
   geoSuccess: function(position){

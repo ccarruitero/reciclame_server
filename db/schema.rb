@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130510040833) do
+ActiveRecord::Schema.define(version: 20131024121738) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "places", force: true do |t|
@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(version: 20130510040833) do
     t.decimal  "lat"
     t.decimal  "lng"
     t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "users", force: true do |t|
+    t.text     "name"
+    t.text     "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

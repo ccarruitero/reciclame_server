@@ -4,12 +4,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reciclame</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <%= yield %>
 
+  <script src="https://login.persona.org/include.js"></script>
+  <script type="text/javascript">
+    <% if current_user %>
+      var $USER = '<%= current_user.email %>';
+    <% else %>
+      var $USER = null;
+    <% end %>
+  </script>
+  <%= javascript_include_tag "application" %>
 </body>
 </html>

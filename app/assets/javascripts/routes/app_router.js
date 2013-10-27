@@ -34,3 +34,20 @@ Reciclame.AboutRoute = Ember.Route.extend({
 
 Reciclame.PlaceRoute = Ember.Route.extend({
 });
+
+Reciclame.ApplicationRoute = Ember.Route.extend({
+  actions: {
+    login: function(){
+      navigator.id.request();
+    },
+
+    login: function(){
+      navigator.id.logout();
+    },
+
+    goToPlaces: function(){
+      map.setZoom(13);
+      this.transitionTo('places');
+    }
+  }
+});

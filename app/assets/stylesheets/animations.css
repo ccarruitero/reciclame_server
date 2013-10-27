@@ -1,0 +1,19 @@
+@keyframes showUp {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.5;
+  }
+}
+
+@keyframes slideIn{
+  from {
+    margin-right: -120px;
+  }
+
+  to {
+    margin-left: -5px;
+  }
+}

@@ -33,44 +33,28 @@
   #resp-menu {
     z-index: 3;
     position: absolute;
-    right: 5px;
-    width: 100px;
-    border-radius: 5px;
-    background: #fff;
-    margin-top: 10px;
-    box-shadow: 2px 0 4px #000;
-    display: none;
-
-    &:before {
-      z-index: 3;
-      content: "";
-      display: block;
-      width: 28px;
-      height: 10px;
-      background: url(menu-point.png) no-repeat;
-      position: absolute;
-      right: 10px;
-      top: -10px;
-    }
+    top: -55px;
+    right: 0px;
+    width: 120px;
+    height: 500px;
+    background: rgba(0,0,0,0.7);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    animation: slideIn 2s;
 
     li {
       list-style: none;
       display: block;
       float: none;
+      color: #fff;
+      padding: 5px 10px;
 
       a {
-        padding: 10px 0;
         width: 100%;
         height: 100%;
         float: left;
-
-        &:first-child {
-          border-radius: 5px 5px 0 0;
-        }
-
-        &:last-child {
-          border-radius: 0 0 5px 5px;
-        }
+        color: #fff;
+        padding: 10px;
+        margin-left: 5px;
 
         &:hover {
           background-color: #247ac1;
@@ -91,6 +75,42 @@
 
   #map {
     top: 120px;
+  }
+
+  .bg {
+    display: block;
+    width: 100%;
+    height: 500px;
+    z-index: 2;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    top: -55px;
+    left: -10px;
+    animation: showUp 1s;
+  }
+
+  .nav-control {
+    background: url(/assets/header.png) repeat-x 0 0;
+    display: block;
+    width: 100%;
+    height: 40px;
+    z-index: 3;
+  }
+
+  .back {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url(/assets/back.png) no-repeat;
+    background-position: 10px;
+    float: left;
+    padding: 0 5px;
+    transform: rotate(180deg);
+  }
+
+  .back:hover, .back:active {
+    background: url(../images/back.png) no-repeat, rgba(0,0,0,0.2);
+    background-position: 10px;
   }
 }
 

@@ -6,14 +6,12 @@
     <li {{action 'login'}} class='nav-menu-opt'>sign in</li>
   </nav>
   <div class="mob-menu">
-    <div id="resp-menu">
-      <li>{{#link-to 'places'}}places{{/link-to}}</li>
-      <li>{{#link-to 'about'}}about{{/link-to}}</li>
-    </div>
+    <span id="resp-button" {{action 'showMenu'}}></span>
   </div>
 </header>
 <div class="clear"></div>
 <aside>
   {{outlet sidebar}}
 </aside>
+  {{outlet modal}}
   {{view Reciclame.MapView}}

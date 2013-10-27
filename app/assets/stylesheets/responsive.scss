@@ -4,6 +4,19 @@
   }
 
   .places {
+    //display: none;
+    height: 120px;
+  }
+
+  .place {
+    height: 30px;
+
+    span {
+      display: none;
+    }
+  }
+
+  .content {
     display: none;
   }
 
@@ -18,7 +31,7 @@
   }
 
   .mob {
-    display: block;
+    //display: block;
   }
 
  #resp-button {

@@ -1,9 +1,9 @@
 <header>
   <h1>{{#link-to 'index'}}Reciclame{{/link-to}}</h1>
   <nav>
-    <li {{action 'goToPlaces'}} class="nav-menu-opt">places</li>
+    <li class="nav-menu-opt"><a {{action 'goToPlaces'}}>places</a></li>
     <li class="nav-menu-opt">{{#link-to 'about'}}about{{/link-to}}</li>
-    <li {{action 'login'}} class='nav-menu-opt'>sign in</li>
+    <li class="nav-menu-opt"><a {{action 'login'}} >sign in</a></li>
   </nav>
   <div class="mob-menu">
     <span id="resp-button" {{action 'showMenu'}}></span>

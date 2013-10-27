@@ -17,6 +17,10 @@
     margin: 3px;
   }
 
+  .mob {
+    display: block;
+  }
+
  #resp-button {
     display: block;
     width: 32px;
@@ -83,6 +87,10 @@
         }
       }
     } 
+  }
+
+  #map {
+    top: 120px;
   }
 }
 

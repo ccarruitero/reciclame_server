@@ -71,7 +71,7 @@ nav {
   }
 }
 
-.mob-menu {
+.mob-menu, .mob {
   display: none;
 }
 
@@ -94,4 +94,8 @@ nav {
 
 .off {
   display: none;
+}
+
+.nav-menu-opt {
+  cursor: pointer;
 }

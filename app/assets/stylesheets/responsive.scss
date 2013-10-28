@@ -39,7 +39,7 @@
     width: 32px;
     height: 32px;
     margin: 5px 10px 0px 0px;
-    background: url('icn-menu.png') no-repeat;
+    background: image-url('icn-menu.png') no-repeat;
     cursor: pointer;
   }
 
@@ -103,7 +103,7 @@
   }
 
   .nav-control {
-    background: url(/assets/header.png) repeat-x 0 0;
+    background: image-url('header.png') repeat-x 0 0;
     display: block;
     width: 100%;
     height: 40px;
@@ -114,7 +114,7 @@
     display: block;
     width: 40px;
     height: 40px;
-    background: url(/assets/back.png) no-repeat;
+    background: image-url('back.png') no-repeat;
     background-position: 10px;
     float: left;
     padding: 0 5px;
@@ -122,7 +122,7 @@
   }
 
   .back:hover, .back:active {
-    background: url(../images/back.png) no-repeat, rgba(0,0,0,0.2);
+    background: image-url('back.png') no-repeat, rgba(0,0,0,0.2);
     background-position: 10px;
   }
 }

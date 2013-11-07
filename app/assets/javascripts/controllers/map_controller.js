@@ -55,7 +55,7 @@ Reciclame.MapController = Ember.ObjectController.extend({
   },
 
   geoError: function(error){
-    console.log('something wrong happens!');
+    console.log('something wrong happens with geolocation');
     console.log('Error ' + error.code + ' : ' + error.message);
     //ToDo: show message with error
     map.setView([-12.132292, -77.021588], 13);

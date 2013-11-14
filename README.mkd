@@ -2,3 +2,16 @@
 Little app to know where can I recycle things.
 
 You can see this running at heroku [here](http://reciclame.herokuapp.com)
+
+# Contributing
+## Requirements
+
+You need ruby and bundler.
+
+*Note*: Is recommendable use ruby with a gemset manager. I prefer [rvm](http://rvm.io), but you can use [rbenv](https://github.com/sstephenson/rbenv), [gs](https://github.com/soveran/gs) or whatever you want.
+
+## Use
+```
+bundle
+rails s
+```

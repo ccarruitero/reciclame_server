@@ -38,11 +38,12 @@ Reciclame.PlaceRoute = Ember.Route.extend({
 
 Reciclame.ApplicationRoute = Ember.Route.extend({
   actions: {
+
     login: function(){
       navigator.id.request();
     },
 
-    login: function(){
+    logout: function(){
       navigator.id.logout();
     },
 

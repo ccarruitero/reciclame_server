@@ -15,10 +15,9 @@
 //= require handlebars
 //= require ember
 //= require ember-data
+//= require settings
 //= require_self
 //= require reciclame
 window.Reciclame = Ember.Application.create({
   rootElement: '#content-area'
 });
-
-//= require_tree .

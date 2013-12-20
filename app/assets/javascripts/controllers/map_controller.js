@@ -20,6 +20,11 @@ Reciclame.MapController = Ember.ObjectController.extend({
       places.map(function(place){
         that.addMarker(place);
       });
+
+      map.on('click', function(e){
+        console.log('mela!!');
+        console.log(e.latlng);
+      });
     }, 2000);
   },
 
@@ -41,7 +46,9 @@ Reciclame.MapController = Ember.ObjectController.extend({
             address: place.get('address')
         }
     }).addTo(map).on('click', function(e) {
-        map.panTo(e.layer.getLatLng());
+        //map.panTo(e.layer.getLatLng());
+        //map.setZoom(17);
+        this.transitionToRoute('place');
     });
   },
   

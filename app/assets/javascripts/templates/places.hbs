@@ -11,3 +11,13 @@
       </li>
   {{/each}}
 </div>
+
+<div class="mob">
+    {{view Ember.Select
+           contentBinding = "content"
+           optionLabelPath = "content.name"
+           optionValuePath = "content.id"
+           prompt = 'select a place'
+           selectionBinding = "selectedPlace"
+    }}
+</div>

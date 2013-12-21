@@ -15,9 +15,9 @@
 //= require handlebars
 //= require ember
 //= require ember-data
-//= require settings
-//= require_self
-//= require reciclame
-window.Reciclame = Ember.Application.create({
-  rootElement: '#content-area'
-});
+<% 
+if Reciclame::Application.assets.find_asset('settings.js')
+  require_asset ('settings')
+end
+  require_asset ('reciclame')
+%>

@@ -31,6 +31,7 @@ Reciclame.MapController = Ember.ObjectController.extend({
   addMarker: function(place){
     var lat = place.get('lat');
     var lng = place.get('lng');
+    var that = this;
 
     L.mapbox.markerLayer({
         type: 'Feature',
@@ -46,9 +47,7 @@ Reciclame.MapController = Ember.ObjectController.extend({
             address: place.get('address')
         }
     }).addTo(map).on('click', function(e) {
-        //map.panTo(e.layer.getLatLng());
-        //map.setZoom(17);
-        this.transitionToRoute('place');
+        that.transitionToRoute('place', place);
     });
   },
   

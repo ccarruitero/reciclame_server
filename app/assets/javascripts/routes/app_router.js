@@ -4,6 +4,8 @@ Reciclame.Router.map(function(){
     this.resource('place', { path: ':place_id' });
     this.route('settings');
   });
+  this.route('login');
+  this.route('logout');
 });
 
 Reciclame.Router.reopen({
@@ -39,12 +41,8 @@ Reciclame.PlaceRoute = Ember.Route.extend({
 Reciclame.ApplicationRoute = Ember.Route.extend({
   actions: {
 
-    login: function(){
-      navigator.id.request();
-    },
-
-    logout: function(){
-      navigator.id.logout();
+    showLoginBox: function() {
+      this.transitionTo('login');
     },
 
     goToPlaces: function(){

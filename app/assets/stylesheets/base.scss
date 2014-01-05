@@ -99,3 +99,14 @@ nav {
 .nav-menu-opt {
   cursor: pointer;
 }
+
+.bg {
+  display: block;
+  width: 100%;
+  max-height: 100%;
+  z-index: 2;
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  top: -55px;
+  animation: showUp 1s;
+}

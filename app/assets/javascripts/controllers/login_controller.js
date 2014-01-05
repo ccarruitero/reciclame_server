@@ -1,6 +1,7 @@
-Reciclame.SessionsController = Ember.Controller.extend({
+Reciclame.LoginController = Ember.Controller.extend({
   init: function(){
     var currentUser = $USER;
+    console.log(currentUser);
 
     navigator.id.watch({
       loggedInUser: currentUser,
@@ -8,6 +9,7 @@ Reciclame.SessionsController = Ember.Controller.extend({
         $.ajax({
           type: 'POST',
           url: '/login',
+          beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
           data: {assertion: assertion},
           success: function(res, status, xhr) {
             window.location.reload();
@@ -24,6 +26,7 @@ Reciclame.SessionsController = Ember.Controller.extend({
         $.ajax({
           type: 'POST',
           url: '/logout',
+          beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
           success: function(res, status, xhr) {
             window.location.reload();
             console.log('logout from persona succesful');

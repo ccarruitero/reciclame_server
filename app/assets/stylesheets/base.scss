@@ -110,3 +110,12 @@ nav {
   top: -55px;
   animation: showUp 1s;
 }
+
+.close {
+  display: block;
+  content: '';
+  width: 25px;
+  height: 25px;
+  background: url('/assets/close.png') no-repeat;
+  background-size: 100%;
+}

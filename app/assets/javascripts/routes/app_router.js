@@ -2,10 +2,10 @@ Reciclame.Router.map(function(){
   this.resource('about');
   this.resource('places', function(){
     this.resource('place', { path: ':place_id' });
-    this.route('settings');
   });
   this.route('login');
   this.route('logout');
+  this.route('settings');
 });
 
 Reciclame.Router.reopen({
@@ -57,7 +57,7 @@ Reciclame.ApplicationRoute = Ember.Route.extend({
     },
 
     showMenu: function(){
-      this.transitionTo('places.settings');
+      this.transitionTo('settings');
     },
 
     open: function(){
@@ -65,7 +65,7 @@ Reciclame.ApplicationRoute = Ember.Route.extend({
       this.render('modal', { into: 'application', outlet: 'modal' });
     },
 
-    close: function(){
+     close: function(){
       console.log('login persona iframe should be hided');
       this.render('nothing', { into: 'application', outlet: 'modal' });
     }

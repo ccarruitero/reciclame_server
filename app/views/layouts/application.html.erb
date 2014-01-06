@@ -13,9 +13,9 @@
   <script src="https://login.persona.org/include.js"></script>
   <script type="text/javascript">
     <% if current_user %>
-      var $USER = '<%= current_user.email %>';
+      var currentUser = '<%= current_user.email %>';
     <% else %>
-      var $USER = null;
+      var currentUser = null;
     <% end %>
   </script>
   <%= javascript_include_tag "application" %>

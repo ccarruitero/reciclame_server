@@ -13,17 +13,9 @@ class User < ActiveRecord::Base
     response = JSON.parse(request)
 
     if response['status'] == 'okay'
-      user = User.find_or_create_by_email(response['email']) 
-      if found_user and found_user['email']
-        puts 'Existing User'
-      else
-        puts 'Creating User'
-        User.create(name: response['email'], email: response['email'])
-      end
-
-      return response
+      response
     else
-      return { status: 'error' }.to_json
+      { status: 'error' }.to_json
     end
   end
 end

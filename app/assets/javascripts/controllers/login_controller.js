@@ -4,16 +4,18 @@ Reciclame.LoginController = Ember.Controller.extend({
     console.log('currentUser is: ' + currentUser);
 
     navigator.id.watch({
-      loggedInUser: currentUser,
+      loggedInUser: that.loggedUser,
 
-      onlogin: that.onLogin(assertion),
+      onlogin: that.onLogin,
 
       onlogout: that.onLogout
-      }
     });
   },
 
+  loggedUser: null,
+
   onLogin: function(assertion){
+    var that = this;
     $.ajax({
       type: 'POST',
       url: '/login',
@@ -21,8 +23,9 @@ Reciclame.LoginController = Ember.Controller.extend({
       data: {assertion: assertion},
       success: function(res, status, xhr) {
         console.log('persona authentication succesful');
-        console.log(res.email);
-        that.transitionToRoute('places.index');
+        that.loggedUser = res.email;
+        console.log(that.loggedUser);
+        that.transitionToRoute('places');
       },
       error: function(xhr, status, err) {
         console.log("Login failure: " + err);
@@ -31,14 +34,15 @@ Reciclame.LoginController = Ember.Controller.extend({
     });
   },
 
-  onLogin: function() {
+  onLogout: function() {
+    var that = this;
     $.ajax({
       type: 'POST',
       url: '/logout',
       beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
       success: function(res, status, xhr) {
         console.log('logout from persona succesful');
-        that.transitionToRoute('places.index');
+        that.transitionToRoute('places');
       },
       error: function(xhr, status, err) {
         console.log("Logout failure: " + err);

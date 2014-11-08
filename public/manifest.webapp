@@ -1,0 +1,17 @@
+{
+  "name": "Reciclame",
+  "description": "an app to know where recycle things",
+  "launch_path": "/",
+  "version": "0.0.1",
+  "developer": {
+    "name": "Cesar Carruitero",
+    "url": "https://github.com/ccarruitero/reciclame"
+  },  
+  "locales": {    
+  },
+  "icons": {
+    "128": "/recycle.png"
+  },
+  "default_locale": "en",
+  "orientation": ["portrait"]
+}

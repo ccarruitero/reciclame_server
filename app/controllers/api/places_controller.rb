@@ -1,4 +1,4 @@
-class PlacesController < ApplicationController
+class Api::PlacesController < APIController
 
   respond_to :json
 
@@ -8,10 +8,6 @@ class PlacesController < ApplicationController
 
   def show
     respond_with Place.find(params[:id])
-  end
-
-  def new
-    @place = Place.new
   end
 
   def edit

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150519214800) do
+ActiveRecord::Schema.define(version: 20150519222516) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20150519214800) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin",      default: false
+    t.string   "token"
   end
 
 end

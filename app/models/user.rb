@@ -2,7 +2,7 @@ require 'rest-client'
 require 'json'
 
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :admin
+  attr_accessible :name, :email, :admin, :token
 
   validates :email, uniqueness: true
 
@@ -20,5 +20,14 @@ class User < ActiveRecord::Base
     else
       { status: 'error' }.to_json
     end
+  end
+
+  def self.authenticate_token token
+    self.find_by(token: token)
+  end
+
+  def generate_token
+    token = SecureRandom.hex
+    self.update token: token
   end
 end

@@ -3,7 +3,7 @@ Reciclame::Application.routes.draw do
   post 'login', to: 'sessions#create'
   post 'logout', to: 'sessions#destroy'
 
-  namespace :api do
+  namespace :api, defaults: {format: :json} do
     resources :categories
     resources :places
     resources :users

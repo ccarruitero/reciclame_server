@@ -2,6 +2,9 @@ require 'rest-client'
 require 'json'
 
 class User < ActiveRecord::Base
+  attr_accessible :name, :email, :admin
+
+  validates :email, uniqueness: true
 
   def self.authenticate_with_persona(assertion, audience)
     server = 'https://verifier.login.persona.org/verify'

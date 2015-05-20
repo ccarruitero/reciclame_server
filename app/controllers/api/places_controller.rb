@@ -1,45 +1,35 @@
 class Api::PlacesController < APIController
 
-  respond_to :json
+  before_action :set_place, except: [:index, :create]
+  skip_before_filter :login_required, only: [:index, :show]
+  before_filter :admin_required, only: [:update, :destroy]
 
   def index
     respond_with Place.all
   end
 
   def show
-    respond_with Place.find(params[:id])
-  end
-
-  def edit
-    @place = Place.find(params[:id])
+    respond_with @place
   end
 
   def create
-    @place = Place.new(params[:place])
-
-      if @place.save
-        respond_with render json: @place, status: :created, location: @place 
-      else
-        respond_with render json: @place.errors, status: :unprocessable_entity
-      end
+    @place = Place.create(params[:place])
+    respond_api @place
   end
 
   def update
-    @place = Place.find(params[:id])
-
-    if @place.update_attributes(params[:place])
-      respond_with head :no_content
-    else
-      respond_with render json: @place.errors, status: :unprocessable_entity
-    end
+    @place.update_attributes(params[:place])
+    respond_api @place
   end
 
   def destroy
-    @place = Place.find(params[:id])
     @place.destroy
+    respond_api @place
+  end
 
-    respond_to do |format|
-      format.json { head :no_content }
-    end
+  private
+
+  def set_place
+    @place = Place.find params[:id]
   end
 end

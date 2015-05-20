@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150519222516) do
+ActiveRecord::Schema.define(version: 20150520055628) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -28,6 +28,14 @@ ActiveRecord::Schema.define(version: 20150519222516) do
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "verified",            default: false
+    t.string   "access"
+    t.integer  "schedule_day_start"
+    t.integer  "schedule_day_end"
+    t.time     "schedule_hour_start"
+    t.time     "schedule_hour_end"
+    t.integer  "contact_phone"
+    t.string   "country"
   end
 
   create_table "users", force: true do |t|

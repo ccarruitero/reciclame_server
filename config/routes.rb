@@ -1,6 +1,6 @@
 Reciclame::Application.routes.draw do
   root to: 'root#index'
-  post 'login', to: 'sessions#create'
+  get '/auth/:provider/callback', to: 'sessions#create'
   post 'logout', to: 'sessions#destroy'
 
   namespace :api, defaults: {format: :json} do

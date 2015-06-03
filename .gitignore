@@ -16,3 +16,4 @@
 *.swp
 config/jshint.yml
 settings.js
+.env

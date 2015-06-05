@@ -1,4 +1,4 @@
-class Api::CategoriesController < APIController
+class Api::CategoriesController < ApiController
 
   before_action :set_category, except: [:index, :create]
   skip_before_filter :login_required, only: [:index, :show]

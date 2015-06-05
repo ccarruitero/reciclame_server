@@ -1,4 +1,4 @@
-class Api::UsersController < APIController
+class Api::UsersController < ApiController
   before_action :set_user, except: [:create]
   skip_before_filter :login_required, only: [:create]
   respond_to :json

@@ -1,4 +1,4 @@
-class Api::PlacesController < APIController
+class Api::PlacesController < ApiController
 
   before_action :set_place, except: [:index, :create]
   skip_before_filter :login_required, only: [:index, :show]

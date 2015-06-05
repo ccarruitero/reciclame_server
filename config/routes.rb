@@ -1,4 +1,5 @@
 Reciclame::Application.routes.draw do
+  match '*all', to: 'api#preflight', via: [:options]
   root to: 'root#index'
   get '/auth/:provider/callback', to: 'sessions#create'
   post 'logout', to: 'sessions#destroy'

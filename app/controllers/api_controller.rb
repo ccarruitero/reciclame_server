@@ -1,6 +1,11 @@
-class APIController < ApplicationController
+class ApiController < ApplicationController
   before_filter :login_required, :set_cors_headers
+  skip_before_filter :login_required, only: [:preflight]
   respond_to :json
+
+  def preflight
+    head(200)
+  end
 
   private
 

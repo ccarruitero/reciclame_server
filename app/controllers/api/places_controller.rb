@@ -23,8 +23,9 @@ class Api::PlacesController < ApiController
   end
 
   def destroy
+    @place.categories.clear
     @place.destroy
-    respond_api @place
+    head 200
   end
 
   private
